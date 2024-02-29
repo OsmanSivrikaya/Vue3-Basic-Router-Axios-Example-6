@@ -31,8 +31,8 @@
       }
     },
     created(){
-      this.$appAxios.get("/bookmarks").then(data => {
-        this.bookmarkList = data || [];
+      this.$appAxios.get("/bookmarks").then(response => {
+        this.bookmarkList = response.data || [];
       })
     },
     methods:{

@@ -19,6 +19,7 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
   export default{
     data(){
       return {
@@ -31,7 +32,7 @@
     },
     methods: {
       onSave(){
-          this.$appAxios.post('http://localhost:3000/bookmarks', this.userData)
+          this.$appAxios.post('/bookmarks', this.userData)
           .then(save_response => {
             this.resetData();
             this.$router.push("/");
